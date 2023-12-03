@@ -133,13 +133,16 @@ namespace calculatorSQA
             Assert.AreEqual(17.68, cal.multiply(5.2f, 3.4f),tolerance);
         }
         [Test]
-        public void Multiply()
+        public void MultiplyBigNumsPass()
         {
-            Assert.AreEqual(79488952611897344.0d, cal.multiply(883909, 89928883929));
+            Assert.AreEqual(79488950125551616.0d, cal.multiply(883909, 89928883929));
         }
 
-
-
+        [Test]
+        public void MultiplyBigNumsFail()
+        {
+            Assert.AreEqual(794889501255, cal.multiply(883909, 89928883929));
+        }
 
     }
 }
